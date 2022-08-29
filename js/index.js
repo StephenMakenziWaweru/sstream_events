@@ -17,7 +17,6 @@ function login() {
         mimeType: "multipart/form-data",
         data: form,
         success: function (response) {
-            console.log(response)
                     const responseJson = JSON.parse(response);
                     if (responseJson.token != null) {
                         localStorage.setItem("jwt", responseJson.token);
@@ -58,8 +57,7 @@ function register() {
       },
       processData: false,
       data: JSON. stringify(jsonData),   
-      success: function(response) {   
-        console.log(response)            
+      success: function(response) {              
                     Swal.fire({
                         text: `Registered successfully as ${response.username}`,
                         icon: 'success',
