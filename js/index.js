@@ -109,9 +109,9 @@ function getEvents() {
                 index += 1;
             });  
         },
-        error: function() {
+        error: function(response) {
             Swal.fire({
-                text: `Invalid Authorization token`,
+                text: `${response.responseJSON.detail}`,
                 icon: 'error',
                 confirmButtonText: 'OK'
                 }).then(() => {
